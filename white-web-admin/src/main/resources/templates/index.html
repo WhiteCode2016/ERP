@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout/layout}"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:replace="layout/layout :: htmlhead(title='主页',userStyle=~{::innerLinkCss},userScripts=~{::innerLinkScript})"></head>
+<body>
+<div class="content-wrapper" layout:fragment="content">
+    <section class="content-header">
+        <h1>控制面板</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 控制面板</a></li>
+            <li class="active">Demo</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-info box-info-search" style="display: none;">
+                    <div class="box-header">
+                        <h3 class="box-title">Demo</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<script layout:fragment="innerScript">
+    $(function () {
+        console.log("Hello, World!");
+    });
+</script>
+
+</body>
+</html>

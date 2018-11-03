@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>控制面板</title>
+    <th:block th:include="common/head :: head" />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <th:block th:replace="common/header :: header" />
+    <th:block th:replace="common/menu :: menu" />
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>控制面板</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 控制面板</a></li>
+                <li class="active">Demo</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-info box-info-search" style="display: none;">
+                        <div class="box-header">
+                            <h3 class="box-title">Demo</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <th:block th:replace="common/copyright :: copyright" />
+</div>
+
+<th:block th:include="common/foot :: foot"/>
+</body>
+</html>

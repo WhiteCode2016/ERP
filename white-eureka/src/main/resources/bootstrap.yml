@@ -1,0 +1,17 @@
+## Base Config
+spring:
+  application:
+    name: white-eureka
+
+server:
+  port: 8761
+
+## Eureka Server Config
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

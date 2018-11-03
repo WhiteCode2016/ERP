@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:fragment="htmlhead">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title th:text="${title}?${title}:'xxx管理系统'"></title>
+    <link rel="stylesheet" th:href="@{{adminlte}/bower_components/bootstrap/dist/css/bootstrap.min.css(adminlte=${adminlte})}">
+    <link rel="stylesheet" th:href="@{{adminlte}/bower_components/font-awesome/css/font-awesome.min.css(adminlte=${adminlte})}">
+    <link rel="stylesheet" th:href="@{{adminlte}/bower_components/Ionicons/css/ionicons.min.css(adminlte=${adminlte})}">
+    <link rel="stylesheet" th:href="@{{adminlte}/dist/css//AdminLTE.min.css(adminlte=${adminlte})}">
+    <link rel="stylesheet" th:href="@{{adminlte}/dist/css/skins/_all-skins.min.css(adminlte=${adminlte})}">
+    <!-- iCheck -->
+    <link rel="stylesheet" th:href="@{{adminlte}/plugins/iCheck/all.css(adminlte=${adminlte})}">
+    <!-- datatables -->
+    <link rel="stylesheet" th:href="@{{adminlte}/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css(adminlte=${adminlte})}">
+
+    <!-- 其他css -->
+    <th:block th:include="${userStyle}?${userStyle}:~{}" />
+
+    <th:block th:fragment="scriptboot">
+        <script th:src="@{{adminlte}/bower_components/jquery/dist/jquery.min.js(adminlte=${adminlte})}"></script>
+        <script th:src="@{{adminlte}/bower_components/jquery-ui/jquery-ui.min.js(adminlte=${adminlte})}"></script>
+        <script th:src="@{{adminlte}/bower_components/bootstrap/dist/js/bootstrap.min.js(adminlte=${adminlte})}"></script>
+        <script th:src="@{{adminlte}/dist/js/AdminLTE.min.js(adminlte=${adminlte})}"></script>
+        <!-- iCheck -->
+        <script th:src="@{{adminlte}/plugins/iCheck/icheck.js(adminlte=${adminlte})}"></script>
+        <!-- datatables -->
+        <script th:src="@{{adminlte}/bower_components/datatables.net/js/jquery.dataTables.min.js(adminlte=${adminlte})}"></script>
+        <script th:src="@{{adminlte}/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js(adminlte=${adminlte})}"></script>
+
+        <!-- 其他js -->
+        <th:block th:include="${userScripts}?${userScripts}:~{}" />
+
+    </th:block>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <th:block th:replace="common/header :: header" />
+        <th:block th:replace="common/menu :: menu" />
+        <div class="content-wrapper" layout:fragment="content">
+
+        </div>
+        <th:block th:replace="common/copyright :: copyright" />
+    </div>
+    <th:block th:include="common/foot :: foot"/>
+
+    <!-- 自定义javaScript -->
+    <th:block layout:fragment="innerScript"/>
+</body>
+</html>

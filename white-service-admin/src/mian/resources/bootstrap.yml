@@ -1,0 +1,28 @@
+## Base Config
+spring:
+  application:
+    name: white-service-admin
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/white-project-manage?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123
+
+server:
+  port: 8501
+
+## Feign Config
+feign:
+  hystrix:
+    enabled: true
+
+## MyBatis Config
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+
+## Eureka Client Config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
